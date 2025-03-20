@@ -4,6 +4,8 @@ import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 import { useState } from "react";
+import Link from "next/link"
+import Head from 'next/head'
 
 function MakeText(ntime: Date, dtype:number){
     //ntime: nowtime
@@ -36,7 +38,10 @@ export default function HomePage(){
     const [dtype, setDtype] = useState(0);
     setTimeout(()=>setDate(new Date()),1000)
 
-    return (<><Row style={{padding:"10%"}}>
+    return (<>
+        <Head><title>현재 시각은</title>
+        <meta property="og:title" content="현재 시각은" key="title" />
+            </Head><Row style={{padding:"10%"}}>
         <Row><h2>현재 시각은?</h2></Row>
     <Row style={{display:'flex', textAlign:"center"}}>
         <Col style={{width:"80%"}}>
@@ -48,6 +53,9 @@ export default function HomePage(){
         {dtype==0?<></>:<Button style={{marginTop:0.3+"em", marginBottom:0.5+"em"}}onClick={()=>setDtype(0)}>윤석열이 파면되었다면 지금은 몇시입니까?</Button>}
         {dtype==1?<></>:<Button style={{marginTop:0.3+"em", marginBottom:0.5+"em"}}onClick={()=>setDtype(1)}>거짓말이야 나는 12월 3일을 벗어나지 못했어</Button>}
         {dtype==2?<></>:<Button style={{marginTop:0.3+"em", marginBottom:0.5+"em"}}onClick={()=>setDtype(2)}>거짓말이야 나는 12월을 벗어나지 못했어</Button>}
+    </Row>
+    <Row style={{marginTop:3+"em"}}>
+        <p>Made by - Twitter: <Link target="_blank" href="https://x.com/isaack___">isaack___(토스트아재)</Link>/<Link target="_blank"href="https://x.com/guillotine_prof">guillotine_profs(단두대학교 교수회)</Link> (동일인물입니다)</p>
     </Row>
     </Row>
     </>);
