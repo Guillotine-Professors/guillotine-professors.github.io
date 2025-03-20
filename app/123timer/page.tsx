@@ -6,6 +6,8 @@ import Button from "react-bootstrap/Button"
 import { useState } from "react";
 import Link from "next/link"
 import Head from 'next/head'
+import { GoogleAnalytics } from '@next/third-parties/google'
+// import Script from "next/script";
 
 function MakeText(ntime: Date, dtype:number){
     //ntime: nowtime
@@ -40,7 +42,8 @@ export default function HomePage(){
     return (<>
         <Head><title>현재 시각은</title>
         <meta property="og:title" content="현재 시각은" key="title" />
-            </Head><Row style={{padding:"10%"}}>
+            </Head>
+            <Row style={{padding:"10%"}}>
         <Row><h2>현재 시각은?</h2></Row>
     <Row style={{display:'flex', textAlign:"center"}}>
         <Col style={{width:"80%"}}>
@@ -57,5 +60,6 @@ export default function HomePage(){
         <p>Made by <Link target="_blank" href="https://x.com/isaack___">twitter:isaack___(토스트아재)</Link>, <Link target="_blank"href="https://x.com/guillotine_prof">twitter:guillotine_profs(단두대학교 교수회)</Link></p>
     </Row>
     </Row>
+    <GoogleAnalytics gaId="G-EPXHNY8J0Y" />
     </>);
 }
