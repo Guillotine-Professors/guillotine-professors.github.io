@@ -55,7 +55,7 @@ export default function HomePage(){
         {dtype==2?<></>:<Button style={{marginTop:0.3+"em", marginBottom:0.5+"em"}}onClick={()=>setDtype(2)}>거짓말이야 나는 12월을 벗어나지 못했어</Button>}
     </Row>
     <Row style={{marginTop:3+"em"}}>
-        <p>Made by - Twitter: <Link target="_blank" href="https://x.com/isaack___">isaack___(토스트아재)</Link>/<Link target="_blank"href="https://x.com/guillotine_prof">guillotine_profs(단두대학교 교수회)</Link> (동일인물입니다)</p>
+        <p>Made by <Link target="_blank" href="https://x.com/isaack___">twitter:isaack___(토스트아재)</Link>, <Link target="_blank"href="https://x.com/guillotine_prof">twitter:guillotine_profs(단두대학교 교수회)</Link></p>
     </Row>
     </Row>
     </>);
