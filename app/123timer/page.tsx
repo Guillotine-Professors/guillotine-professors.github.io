@@ -12,7 +12,7 @@ function MakeText(ntime: Date, dtype:number){
     //dtype: display type (0: normal, 1: 12.3 based, 2: december based)
     const thedate = new Date(2024,11,3,0,0,0,0);
     if(dtype==0){
-        return `${ntime.getFullYear()}년 ${ntime.getMonth()}월 ${ntime.getDate()}일 ${ntime.getHours()}시 ${ntime.getMinutes()}분 ${ntime.getSeconds()}초`
+        return `${ntime.getFullYear()}년 ${ntime.getMonth()+1}월 ${ntime.getDate()}일 ${ntime.getHours()}시 ${ntime.getMinutes()}분 ${ntime.getSeconds()}초`
     }
     if(dtype==1){
         const diff = (ntime.getTime()-thedate.getTime())/1000;
