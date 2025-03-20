@@ -11,21 +11,20 @@ function MakeText(ntime: Date, dtype:number){
     //ntime: nowtime
     //dtype: display type (0: normal, 1: 12.3 based, 2: december based)
     const thedate = new Date(2024,11,3,0,0,0,0);
+    const diff = Math.floor((ntime.getTime()-thedate.getTime())/1000)
     if(dtype==0){
         return `${ntime.getFullYear()}년 ${ntime.getMonth()+1}월 ${ntime.getDate()}일 ${ntime.getHours()}시 ${ntime.getMinutes()}분 ${ntime.getSeconds()}초`
     }
     if(dtype==1){
-        const diff = (ntime.getTime()-thedate.getTime())/1000;
-        const hour = (diff/3600).toFixed(0);
-        const minute = (diff/60%60).toFixed(0);
+        const hour = (Math.floor(diff/3600)).toFixed(0);
+        const minute = (Math.floor(diff/60)%60).toFixed(0);
         const second = (diff%60).toFixed(0);
         return `2024년 12월 3일 ${hour}시 ${minute}분 ${second}초`
     }
     if(dtype==2){
-        const diff = (ntime.getTime()-thedate.getTime())/1000;
-        const date = (diff/3600/24+2).toFixed(0);
-        const hour = (diff/3600%24).toFixed(0);
-        const minute = (diff/60%60).toFixed(0);
+        const date = (Math.floor(diff/3600/24)+2).toFixed(0);
+        const hour = (Math.floor(diff/3600)%24).toFixed(0);
+        const minute = (Math.floor(diff/60)%60).toFixed(0);
         const second = (diff%60).toFixed(0);
         return `2024년 12월 ${date}일 ${hour}시 ${minute}분 ${second}초`
     }
@@ -36,7 +35,7 @@ export default function HomePage(){
     // const date = new Date();
     const [date, setDate] = useState(new Date);
     const [dtype, setDtype] = useState(0);
-    setTimeout(()=>setDate(new Date()),1000)
+    setTimeout(()=>setDate(new Date()),300)
 
     return (<>
         <Head><title>현재 시각은</title>
