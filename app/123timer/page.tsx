@@ -19,15 +19,20 @@ function MakeText(ntime: Date, dtype:number){
     }
     if(dtype==1){
         const hour = (Math.floor(diff/3600)).toFixed(0);
-        const minute = (Math.floor(diff/60)%60).toFixed(0);
-        const second = (diff%60).toFixed(0);
+        // const minute = (Math.floor(diff/60)%60).toFixed(0);
+        // const second = (diff%60).toFixed(0);
+        const minute = ntime.getMinutes();
+        const second = ntime.getSeconds();
         return `2024년 12월 3일 ${hour}시 ${minute}분 ${second}초`
     }
     if(dtype==2){
-        const date = (Math.floor(diff/3600/24)+2).toFixed(0);
-        const hour = (Math.floor(diff/3600)%24).toFixed(0);
-        const minute = (Math.floor(diff/60)%60).toFixed(0);
-        const second = (diff%60).toFixed(0);
+        const date = (Math.floor(diff/3600/24)+3).toFixed(0);
+        // const hour = (Math.floor(diff/3600)%24).toFixed(0);
+        // const minute = (Math.floor(diff/60)%60).toFixed(0);
+        // const second = (diff%60).toFixed(0);
+        const hour = ntime.getHours();
+        const minute = ntime.getMinutes();
+        const second = ntime.getSeconds();
         return `2024년 12월 ${date}일 ${hour}시 ${minute}분 ${second}초`
     }
     return "모르겠는"
