@@ -40,12 +40,12 @@ export default function HomePage(){
         <Row><h2>현재 시각은?</h2></Row>
     <Row style={{display:'flex', textAlign:"center"}}>
         <Col style={{width:"80%"}}>
-        <h3>
+        <h3 style={{marginBottom: 1.0+"em"}}>
         지금은 {MakeText1(date)} 입니다.</h3>
         <h4>
-        고진수 서비스노조 세종호텔지부장이 </h4><h4>세종호텔 앞 지하차도 안내 구조물에서 고공농성을 한 지</h4>
-        <h4>
-        {MakeText2(date)} 되었습니다.</h4>
+        고진수 서비스연맹 관광레저산업노조 세종호텔지부장이 </h4><h4>세종호텔 앞 지하차도 안내 구조물에서 고공농성을 한 지</h4>
+        <h3 style={{marginTop: 0.5+"em", marginBottom: 0.5+"em"}}>
+        {MakeText2(date)} 되었습니다.</h3>
         </Col>
     </Row>
     {/* <Row >
